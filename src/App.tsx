@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import "./App.css";
+
+import Memo from "./components/Memo";
+import Container from "./components/Container";
+import Context from "./components/Context";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>react hooks training</h2>
+      <Router>
+        <Route exact path="/memo" component={Memo} />
+        <Route exact path="/container" component={Container} />
+        <Route exact path="/context" component={Context} />
+      </Router>
     </div>
   );
 }
