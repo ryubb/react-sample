@@ -1,4 +1,24 @@
 import React, { FC } from "react";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  height: 50px;
+  overflow-y: scroll;
+`;
+const List = ({ list }: { list: string }) => {
+  console.warn("list child");
+  return <p>{list}</p>;
+};
+const Array = ({ lists }: { lists: string[] }) => {
+  console.warn("list component");
+  return (
+    <Wrapper>
+      {lists.map((v) => (
+        <List key={v} list={v} />
+      ))}
+    </Wrapper>
+  );
+};
 
 const MemoCount = React.memo(
   ({
@@ -10,14 +30,19 @@ const MemoCount = React.memo(
     callback: Function;
     data: any;
   }) => {
-    console.log("child component MemoCount");
     callback();
+    React.useEffect(() => {
+      console.warn("child component MemoCount");
+      return () => {
+        console.error("child component MemoCount unmount");
+      };
+    });
 
     return (
       <div>
         <p>memo count</p>
         {Object.keys(data).map((v: any) => (
-          <p>{data[v]}</p>
+          <p key={v}>{data[v]}</p>
         ))}
         <p>{count}</p>
       </div>
@@ -39,6 +64,7 @@ const Memo: FC<Props> = (props: Props) => {
   console.log("parent component Memo");
   const [count, setCount] = React.useState(0);
   const [memoCount, setMemoCount] = React.useState(0);
+  const [lists, setLists] = React.useState<string[]>([]);
 
   const squareArea = React.useMemo(() => {
     console.log("use memo function");
@@ -68,6 +94,10 @@ const Memo: FC<Props> = (props: Props) => {
           memo count clicked
         </button>
         <div>二畳：{squareArea}</div>
+        <Array lists={lists} />
+        <button onClick={() => setLists(lists.concat(["new list"]))}>
+          add list
+        </button>
       </div>
     </div>
   );

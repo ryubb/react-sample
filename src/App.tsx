@@ -6,6 +6,7 @@ import Memo from "./components/Memo";
 import Container from "./components/Container";
 import Context from "./components/Context";
 import Redux from "./components/Redux";
+import CustomHook from "./components/CustomHook";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/container" component={Container} />
         <Route exact path="/context" component={Context} />
         <Route exact path="/redux" component={Redux} />
+        <Route exact path="/custom_hooks" component={CustomHook} />
       </Router>
     </div>
   );
