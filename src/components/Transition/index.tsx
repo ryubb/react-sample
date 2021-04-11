@@ -18,7 +18,7 @@ const useStyles = makeStyles(() =>
       height: "100%",
       backgroundColor: "red",
       opacity: 1,
-      transition: "opacity 1s, height 1s",
+      transition: "opacity 1s, height 0s",
     },
     hide: {
       opacity: 0,
@@ -31,7 +31,7 @@ interface Props {}
 const Transition: FC<Props> = (props: Props) => {
   const [value, setValue] = useState("A");
   const { content, hide } = useStyles();
-  console.log(hide);
+
   return (
     <div>
       <h4>transition component</h4>

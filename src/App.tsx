@@ -10,6 +10,7 @@ import CustomHook from "./components/CustomHook";
 import NestedRouter from "./components/NestedRouter";
 import Jsx from "./components/Jsx";
 import Transition from "./components/Transition";
+import ReactTransitionGroup from "./components/ReactTransitionGroup";
 
 function App() {
   return (
@@ -30,6 +31,10 @@ function App() {
             <Route path="/nested_router" component={NestedRouter} />
             <Route path="/jsx" component={Jsx} />
             <Route path="/transition" component={Transition} />
+            <Route
+              path="/react_transition_group"
+              component={ReactTransitionGroup}
+            />
           </div>
         </Switch>
       </Router>
