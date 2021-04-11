@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
 // ReactElements
-const Main = <p>test</p>;
+// const Main = <p>test</p>;
 
 // ReactComponents
 const Main: FC = () => {

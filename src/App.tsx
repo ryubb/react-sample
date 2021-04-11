@@ -9,6 +9,7 @@ import Redux from "./components/Redux";
 import CustomHook from "./components/CustomHook";
 import NestedRouter from "./components/NestedRouter";
 import Jsx from "./components/Jsx";
+import Transition from "./components/Transition";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route exact path="/custom_hooks" component={CustomHook} />
             <Route path="/nested_router" component={NestedRouter} />
             <Route path="/jsx" component={Jsx} />
+            <Route path="/transition" component={Transition} />
           </div>
         </Switch>
       </Router>
