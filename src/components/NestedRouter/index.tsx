@@ -1,4 +1,4 @@
-import React, { FC, memo, useState, ReactElement } from "react";
+import React, { FC, memo, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -29,7 +29,7 @@ const SharedComponent = memo(() => {
 
 interface Props {}
 const NestedRouter: FC<Props> = (props: Props) => {
-  const { path } = useRouteMatch();
+  // const { path } = useRouteMatch();
   const [value, setValue] = useState<number>(0);
   return (
     <>
