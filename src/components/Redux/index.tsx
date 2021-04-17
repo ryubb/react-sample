@@ -2,14 +2,11 @@ import React, { FC } from "react";
 import { useSelector, useDispatch, connect } from "react-redux";
 import Child from "./Child";
 import { State } from "../..";
+import Child2 from "./Child2";
 
 interface Props {}
 const Redux: FC<State> = ({ price, test }: State) => {
   console.log("redux parent");
-  // const { price, test } = useSelector(({ price, test }: State) => ({
-  //   price,
-  //   test,
-  // }));
   const dispatch = useDispatch();
 
   const onClickPrice = () => {
@@ -25,6 +22,7 @@ const Redux: FC<State> = ({ price, test }: State) => {
       <p>price is {price}</p>
       <p>test is {test}</p>
       <Child />
+      <Child2 />
       <button onClick={onClickPrice}>price clicked!!</button>
       <button onClick={onClick}>test clicked!!</button>
     </div>
