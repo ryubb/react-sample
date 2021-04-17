@@ -11,6 +11,7 @@ import NestedRouter from "./components/NestedRouter";
 import Jsx from "./components/Jsx";
 import Transition from "./components/Transition";
 import ReactTransitionGroup from "./components/ReactTransitionGroup";
+import Draggable from "./components/Draggable";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
               path="/react_transition_group"
               component={ReactTransitionGroup}
             />
+            <Route path="/draggable" component={Draggable} />
           </div>
         </Switch>
       </Router>
